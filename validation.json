@@ -1,0 +1,83 @@
+{
+  "validated_at": "2026-11-06T21:11:59.681061+00:00",
+  "platform": "Linux x86_64, NVIDIA RTX 4090",
+  "docker_base": "Ubuntu 24.04 + uv 0.11.29; both image digests pinned in docker/Dockerfile",
+  "recreated_environments": {
+    "pi05": {
+      "python": "3.11.15",
+      "imports": "passed",
+      "gpu_arithmetic": "passed"
+    },
+    "gam": {
+      "python": "3.12.3",
+      "imports": "passed",
+      "gpu_arithmetic": "passed"
+    },
+    "spatialvla": {
+      "python": "3.12.3",
+      "imports": "passed",
+      "gpu_arithmetic": "passed"
+    },
+    "oft": {
+      "python": "3.10.20",
+      "imports": "passed",
+      "gpu_arithmetic": "passed"
+    },
+    "sf": {
+      "python": "3.10.20",
+      "imports": "passed",
+      "gpu_arithmetic": "passed"
+    },
+    "isaac": {
+      "python": "3.12.13",
+      "imports": "passed",
+      "gpu_arithmetic": "passed"
+    }
+  },
+  "packaging_tests_passed": 12,
+  "adapter_tests_passed": {
+    "pi05": 3,
+    "gam": 5,
+    "spatialvla": 7,
+    "oft": 8,
+    "sf": 10
+  },
+  "pinned_source_checkouts": 10,
+  "source_setup_idempotence": "passed",
+  "scene_manifest_entries": 148,
+  "original_train_episodes": 584,
+  "real_gam_checkpoint_relocation": {
+    "step": 3000,
+    "adapter_tensors": 142,
+    "all_non_provenance_values_preserved": true,
+    "original_workspace_modified": false
+  },
+  "pi05_pretrained": {
+    "files": 29,
+    "generation_and_crc32c_pinned": true,
+    "cached_files_verified": true,
+    "small_generation_specific_download_and_reuse": "passed"
+  },
+  "scope_limits": [
+    "No new full training",
+    "No new Docker Isaac rendering rollout; original evaluation was active",
+    "No actual 4-8 GPU server test; scheduler dry-run only",
+    "Apt versions may change; retain the built image for identical system libraries"
+  ],
+  "locks_sha256": {
+    "attention.json": "bfb50be178943b4e7cfdd087921be3b650a45b4825f86ebc476778398fffbf8b",
+    "environments.json": "3b12fe0ef2098bc927656471daf27f7f042ffe97c4b59d4c7bbe7708cbd62587",
+    "gam.txt": "34e8cec106f1eb330d9adbbe27fe296a7cd2b8754ea20647eebdc6c5105e2dda",
+    "isaac.txt": "e33cf328b45c4d351a0ee1f90d31fb1f3e095d69edae0a702802532f91f9ba74",
+    "oft.txt": "121ad113b7fa552c419d879dc62b58db9de2a896c8b0789df113748d6e304c22",
+    "overlay-sha256.json": "858b13ee13e057aab802fbe5ced065755d80e143acfbcb6c81176c1ed9754af9",
+    "pi05-gcs.json": "2ad09376e1828ec5c69e65000e38feee42128be125de1108c1591e171a0aa7bd",
+    "pi05.txt": "5ca43de596cdccdc1db17e09daa81401dadd36f228848ac449b29b0ceb2cfb64",
+    "sf.txt": "3c5872796eb4fb177007cd75671208b76b7706e498d1eb6768d34c27f135e33e",
+    "sources.json": "d8c1eaeaaed420b3afdf6ed87342a02516dd97ee3e3838d9edb1b88a19d5a10f",
+    "spatialvla.txt": "86f69be9eb25690e820b203e93a8add96ace9f3fa994555ce044da8fbf2e4cd5",
+    "weights.json": "fec1bea3489f83a3b760fce3a0c02bbc47db539e5369235a066812f0aa4593c1"
+  },
+  "github_payload_mib": 4.15,
+  "large_artifacts_excluded": true
+}

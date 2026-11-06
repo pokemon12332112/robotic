@@ -1,0 +1,32 @@
+{
+  "pi05": {
+    "python": "3.11.15",
+    "source": "robot3/openpi",
+    "cuda_index": "cu126"
+  },
+  "gam": {
+    "python": "3.12.3",
+    "source": "robot3/Geometric-Action-Model",
+    "cuda_index": "cu124"
+  },
+  "spatialvla": {
+    "python": "3.12.3",
+    "source": "robot3/SpatialVLA",
+    "cuda_index": "cu124"
+  },
+  "oft": {
+    "python": "3.10.20",
+    "source": "robot3/openvla-oft",
+    "cuda_index": "cu121"
+  },
+  "sf": {
+    "python": "3.10.20",
+    "source": "robot3/Spatial-Forcing/openvla-SF",
+    "cuda_index": "cu121"
+  },
+  "isaac": {
+    "python": "3.12.13",
+    "source": "robot2/Isaac-GR00T/external_dependencies/IsaacLab",
+    "cuda_index": "cu130"
+  }
+}

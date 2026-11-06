@@ -1,0 +1,28 @@
+services:
+  runner:
+    image: robot-object-understanding:local
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+      args:
+        RUN_UID: ${RUN_UID:-1000}
+        RUN_GID: ${RUN_GID:-1000}
+    init: true
+    stdin_open: true
+    tty: true
+    shm_size: 8gb
+    working_dir: /workspace
+    volumes:
+      - .:/workspace
+      - ./runtime/container-home:/home/runner
+    environment:
+      NVIDIA_DRIVER_CAPABILITIES: all
+      ACCEPT_EULA: ${ACCEPT_EULA:-N}
+      HF_TOKEN: ${HF_TOKEN:-}
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              device_ids: ["${GPU_ID:-0}"]
+              capabilities: [gpu]

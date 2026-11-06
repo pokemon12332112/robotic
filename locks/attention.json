@@ -1,0 +1,8 @@
+{
+  "oft": {
+    "transformers_llama_sha256": "3aac24cec583a6ef5f60b6ec634a8bd3c8377784c5c63c8cc14cb6790554c52e"
+  },
+  "sf": {
+    "transformers_llama_sha256": "3aac24cec583a6ef5f60b6ec634a8bd3c8377784c5c63c8cc14cb6790554c52e"
+  }
+}

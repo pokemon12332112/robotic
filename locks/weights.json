@@ -1,0 +1,88 @@
+{
+  "spatialvla": [
+    {
+      "repo": "IPEC-COMMUNITY/spatialvla-4b-224-pt",
+      "revision": "886c4557dfde53b44c0f74fde7d89bf83a26c3cd",
+      "destination": "SpatialVLA/checkpoints/spatialvla-4b-224-pt",
+      "allow_patterns": [
+        "*.json",
+        "*.model",
+        "*.safetensors",
+        "*.py",
+        "*.txt"
+      ]
+    }
+  ],
+  "oft": [
+    {
+      "repo": "openvla/openvla-7b",
+      "revision": "47a0ec7fc4ec123775a391911046cf33cf9ed83f",
+      "destination": "openvla-oft/checkpoints/openvla-7b",
+      "allow_patterns": [
+        "*.json",
+        "*.model",
+        "*.safetensors",
+        "*.py",
+        "*.txt"
+      ]
+    }
+  ],
+  "sf": [
+    {
+      "repo": "openvla/openvla-7b",
+      "revision": "47a0ec7fc4ec123775a391911046cf33cf9ed83f",
+      "destination": "Spatial-Forcing/openvla-SF/ckpts/openvla-7b",
+      "allow_patterns": [
+        "*.json",
+        "*.model",
+        "*.safetensors",
+        "*.py",
+        "*.txt"
+      ]
+    },
+    {
+      "repo": "facebook/VGGT-1B",
+      "revision": "860abec7937da0a4c03c41d3c269c366e82abdf9",
+      "destination": "Spatial-Forcing/openvla-SF/ckpts/vggt",
+      "allow_patterns": [
+        "model.pt"
+      ]
+    }
+  ],
+  "gam": [
+    {
+      "repo": "SeonghuJeon/3da-libero-training-assets",
+      "repo_type": "dataset",
+      "revision": "4c59c89d4e7c96dabe8465aab5d8a1d55fe3a783",
+      "destination": "Geometric-Action-Model",
+      "allow_patterns": [
+        "checkpoints/track4world_da3.pth"
+      ]
+    },
+    {
+      "repo": "SeonghuJeon/3da-libero-gam",
+      "revision": "72ca5c6eb7dca9a98221db3073730d26e0c9402e",
+      "destination": "Geometric-Action-Model/checkpoints_hf/3da-libero-gam",
+      "allow_patterns": [
+        "pretrained/pretrained-gam.pt"
+      ]
+    },
+    {
+      "repo": "google-t5/t5-base",
+      "revision": "a9723ea7f1b39c1eae772870f3b547bf6ef7e6c1",
+      "cache_only": true,
+      "allow_patterns": [
+        "config.json",
+        "model.safetensors",
+        "spiece.model",
+        "tokenizer.json"
+      ]
+    }
+  ],
+  "pi05": [
+    {
+      "gcs_prefix": "https://storage.googleapis.com/openpi-assets/checkpoints/pi05_base/",
+      "destination": ".cache/openpi/openpi-assets/checkpoints/pi05_base"
+    }
+  ]
+}

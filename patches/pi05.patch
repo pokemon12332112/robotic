@@ -1,0 +1,44 @@
+diff --git a/scripts/train.py b/scripts/train.py
+index 5d28941..9afe598 100644
+--- a/scripts/train.py
++++ b/scripts/train.py
+@@ -1,6 +1,7 @@
+ import dataclasses
+ import functools
+ import logging
++import os
+ import platform
+ from typing import Any
+ 
+@@ -200,7 +201,10 @@ def main(config: _config.TrainConfig):
+             f"Batch size {config.batch_size} must be divisible by the number of devices {jax.device_count()}."
+         )
+ 
+-    jax.config.update("jax_compilation_cache_dir", str(epath.Path("~/.cache/jax").expanduser()))
++    jax.config.update(
++        "jax_compilation_cache_dir",
++        str(epath.Path(os.environ.get("JAX_COMPILATION_CACHE_DIR", "~/.cache/jax")).expanduser()),
++    )
+ 
+     rng = jax.random.key(config.seed)
+     train_rng, init_rng = jax.random.split(rng)
+diff --git a/src/openpi/training/config.py b/src/openpi/training/config.py
+index 4ca47e1..77f9e53 100644
+--- a/src/openpi/training/config.py
++++ b/src/openpi/training/config.py
+@@ -23,6 +23,7 @@ import openpi.policies.libero_policy as libero_policy
+ import openpi.shared.download as _download
+ import openpi.shared.normalize as _normalize
+ import openpi.training.droid_rlds_dataset as droid_rlds_dataset
++import openpi.training.misc.object_understanding_config as object_understanding_config
+ import openpi.training.misc.polaris_config as polaris_config
+ import openpi.training.misc.roboarena_config as roboarena_config
+ import openpi.training.optimizer as _optimizer
+@@ -966,6 +967,7 @@ _CONFIGS = [
+         wandb_enabled=False,
+     ),
+     # RoboArena & PolaRiS configs.
++    *object_understanding_config.get_object_understanding_configs(),
+     *roboarena_config.get_roboarena_configs(),
+     *polaris_config.get_polaris_configs(),
+ ]

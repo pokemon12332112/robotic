@@ -1,0 +1,854 @@
+{
+  "source_episode": "episode_0649",
+  "scenario_id": "MOU_diameter_cross_shape_L3_67577_eb2e577717",
+  "split": "eval",
+  "instruction": "Pick the object with local diameter 52 mm. Lift and hold it; leave all other objects untouched.",
+  "recording": {
+    "robot": "franka",
+    "joint_names": [
+      "panda_joint1",
+      "panda_joint2",
+      "panda_joint3",
+      "panda_joint4",
+      "panda_joint5",
+      "panda_joint6",
+      "panda_joint7",
+      "panda_finger_joint1",
+      "panda_finger_joint2"
+    ],
+    "control_dt_s": 0.03333333333333333,
+    "camera_hz": 20.0,
+    "camera_views": [
+      "top",
+      "left",
+      "right",
+      "wrist"
+    ],
+    "image_size_hw": [
+      256,
+      256
+    ],
+    "capture_profile": "full",
+    "collection_mode": "scripted",
+    "identification_source": "oracle_authored_geometry",
+    "success_protocol": "mou_pick_lift_hold_proxy",
+    "action_schema": "joint_position_target; joint_names order; radians, finger metres",
+    "pose_schema": "world XYZ metres; quaternion XYZW",
+    "camera_pose_schema": "world XYZ metres; ROS optical quaternion XYZW",
+    "depth_schema": "distance_to_image_plane metres; depth_valid mask",
+    "transition_schema": "obs=state_t; actions=command_t; states=state_t+1",
+    "image_alignment": "obs/camera_index selects latest camera frame at or before action"
+  },
+  "run_config": {
+    "task": "metric_spatial_understanding/metric_object_understanding",
+    "task_prompt": null,
+    "num_episodes": 1,
+    "success_target": null,
+    "max_attempts": 1,
+    "seed": 67577,
+    "capture_profile": "full",
+    "video": true,
+    "output_dir": "/media/Seagate16T/locnp/Benchmark/mou756_20261022T181401Z/slot_0662/data",
+    "export_lerobot": false,
+    "lerobot_hz": 30,
+    "task_settings": {
+      "TABLE_SIZE": [
+        1.6,
+        1.0,
+        0.05
+      ],
+      "TABLE_HEIGHT": 0.75,
+      "TABLE_LEG_WIDTH": 0.06,
+      "OBJECT_START_ASLEEP": true,
+      "OBJECT_FORWARD_OFFSETS": [
+        0.43,
+        0.62
+      ],
+      "OBJECT_LATERAL_OFFSETS": [
+        -0.25,
+        0.0,
+        0.25
+      ],
+      "ROBOT_POSITION": [
+        0.0,
+        -0.4,
+        0.75
+      ],
+      "ROBOT_YAW_DEG": 90.0,
+      "ROBOT_ROTATION": [
+        0.0,
+        0.0,
+        0.7071067811865475,
+        0.7071067811865476
+      ],
+      "COLORS": [
+        [
+          0.55,
+          0.012,
+          0.004
+        ],
+        [
+          0.005,
+          0.08,
+          0.5
+        ],
+        [
+          0.008,
+          0.34,
+          0.025
+        ],
+        [
+          0.6,
+          0.28,
+          0.003
+        ],
+        [
+          0.24,
+          0.008,
+          0.5
+        ],
+        [
+          0.003,
+          0.25,
+          0.2
+        ]
+      ],
+      "TABLE_COLOR": [
+        0.12,
+        0.14,
+        0.18
+      ],
+      "MATERIAL_ROUGHNESS": 0.8,
+      "DOME_INTENSITY": 350.0,
+      "KEY_INTENSITY": 650.0,
+      "RENDER_SETTINGS": {
+        "mode": "path_traced",
+        "shadows": false,
+        "path_tracing_samples": 16,
+        "antialiasing_mode": "TAA",
+        "samples_per_pixel": 16
+      },
+      "CAMERAS": {
+        "top": {
+          "position": [
+            0.0,
+            0.65,
+            1.85
+          ],
+          "target": [
+            0.0,
+            0.12,
+            0.78
+          ]
+        },
+        "left": {
+          "position": [
+            -0.8,
+            0.1,
+            1.4
+          ],
+          "target": [
+            -0.08,
+            0.1,
+            0.78
+          ]
+        },
+        "right": {
+          "position": [
+            0.8,
+            0.1,
+            1.4
+          ],
+          "target": [
+            0.08,
+            0.1,
+            0.78
+          ]
+        },
+        "wrist": {
+          "body": "panda_hand",
+          "offset_position": [
+            0.05,
+            0.0,
+            0.0
+          ],
+          "offset_rotation_xyzw": [
+            0.0,
+            0.0,
+            0.7071067812,
+            0.7071067812
+          ]
+        }
+      },
+      "CAMERA_POSITION": [
+        0.0,
+        0.65,
+        1.85
+      ],
+      "CAMERA_TARGET": [
+        0.0,
+        0.12,
+        0.78
+      ],
+      "IMAGE_WIDTH": 256,
+      "IMAGE_HEIGHT": 256,
+      "CAMERA_HZ": 20.0,
+      "CAMERA_DATA_TYPES": [
+        "rgb",
+        "distance_to_image_plane"
+      ],
+      "CAMERA_FOCAL_LENGTH": 25.2949225998,
+      "CAMERA_HORIZONTAL_APERTURE": 20.955,
+      "CAMERA_CLIPPING_RANGE": [
+        0.01,
+        10.0
+      ],
+      "WRIST_CAMERA_FOCAL_LENGTH": 13.6545438439,
+      "WRIST_CAMERA_HORIZONTAL_APERTURE": 20.955,
+      "WRIST_CAMERA_CLIPPING_RANGE": [
+        0.01,
+        10.0
+      ],
+      "ROBOT_TCP_OFFSET": [
+        0.0,
+        0.0,
+        0.1034
+      ],
+      "IK_METHOD": "dls",
+      "PHYSICS_DT": 0.008333333333333333,
+      "CONTROL_STEPS": 4,
+      "SETTLE_SECONDS": 1.0,
+      "SETTLE_MAX_SECONDS": 10.0,
+      "SETTLE_HOLD_SECONDS": 0.5,
+      "SETTLE_LINEAR_SPEED": 0.001,
+      "SETTLE_ANGULAR_SPEED": 0.01,
+      "LIFT_HEIGHT": 0.05,
+      "SUCCESS_HOLD_SECONDS": 0.5,
+      "MAX_DISTRACTOR_MOVEMENT": 0.04,
+      "MAX_HAND_DISTANCE": 0.16,
+      "TIMEOUT_SECONDS": 8.0,
+      "HAND_TO_GRASP": 0.1034,
+      "APPROACH_CLEARANCE": 0.15,
+      "LIFT_DISTANCE": 0.18,
+      "GRIPPER_CLOSED_WIDTH": 0.075,
+      "POSITION_TOLERANCE": 0.01,
+      "ORIENTATION_TOLERANCE": 0.15,
+      "GRIPPER_VELOCITY_TOLERANCE": 0.01
+    },
+    "randomization": {
+      "enabled": true,
+      "camera": {
+        "enabled": false,
+        "position_range_m": 0.05,
+        "fov_range_deg": 5.0
+      },
+      "light": {
+        "enabled": false,
+        "intensity_scale_range": [
+          0.85,
+          1.15
+        ]
+      },
+      "table": {
+        "enabled": false,
+        "options": [
+          {
+            "name": "wood_table",
+            "color_rgb": [
+              0.563427,
+              0.458777,
+              0.360472
+            ],
+            "source_texture": "martin_novak_wood_table.png"
+          },
+          {
+            "name": "living_room_wood",
+            "color_rgb": [
+              0.07517,
+              0.036697,
+              0.023006
+            ],
+            "source_texture": "scenes/living_room_table/living_room_table_texture.png"
+          },
+          {
+            "name": "coffee_table_marble",
+            "color_rgb": [
+              0.535442,
+              0.522327,
+              0.49077
+            ],
+            "source_texture": "scenes/short_coffee_table/Marble062_COL_4K.png"
+          }
+        ]
+      },
+      "target_object": {
+        "enabled": true,
+        "position_range_m": 0.025,
+        "yaw_range_deg": 0.0,
+        "mass_range_kg": [
+          0.05,
+          0.05
+        ],
+        "com_range_m": 0.0
+      },
+      "robot": {
+        "enabled": false,
+        "joint_position_range_rad": 0.09,
+        "joint_velocity_range_rad_s": 0.0
+      }
+    },
+    "case": "diameter",
+    "condition": "cross_shape",
+    "level": "L3",
+    "requested_shape": null,
+    "measurements": {},
+    "split": "eval",
+    "scenario_file": "/media/Seagate16T/locnp/Benchmark/mou756_20261022T181401Z/slot_0662/scenario.json",
+    "rollout_seed_offset": 0
+  },
+  "scene": {
+    "scenario": {
+      "schema_version": 1,
+      "benchmark": "Benchmark",
+      "category": "metric_spatial_understanding",
+      "task": "metric_object_understanding",
+      "case": "diameter",
+      "case_id": "MOU-1.5",
+      "family": "physical_dimensions",
+      "condition": "cross_shape",
+      "level": "L3",
+      "seed": 67577,
+      "split": "eval",
+      "query": {
+        "diameter": {
+          "value": 52,
+          "unit": "mm",
+          "value_si": 0.052000000000000005
+        }
+      },
+      "requested_shape": null,
+      "reference_shape": "circular_disk",
+      "objects": [
+        {
+          "category": "circular_disk",
+          "geometry": {
+            "kind": "cylinder",
+            "radius_m": 0.026000000000000002,
+            "height_m": 0.03,
+            "axis": "Z"
+          },
+          "physical_properties_si": {
+            "length": 0.052000000000000005,
+            "width": 0.052000000000000005,
+            "height": 0.03,
+            "radius": 0.026000000000000002,
+            "diameter": 0.052000000000000005,
+            "footprint_area": 0.0021237166338267006,
+            "volume": 6.371149901480101e-05,
+            "capacity": null,
+            "inner_width": null,
+            "outer_width": null,
+            "handle_length": null
+          },
+          "internal_geometry": null,
+          "components": [],
+          "object_id": "object_0",
+          "distractor_role": "correct_shape_correct_measurement",
+          "target_match": true,
+          "shape_match": true,
+          "measurement_match": true
+        },
+        {
+          "category": "cylinder",
+          "geometry": {
+            "kind": "cylinder",
+            "radius_m": 0.028686972989871613,
+            "height_m": 0.1,
+            "axis": "Z"
+          },
+          "physical_properties_si": {
+            "length": 0.05737394597974323,
+            "width": 0.05737394597974323,
+            "height": 0.1,
+            "radius": 0.028686972989871613,
+            "diameter": 0.05737394597974323,
+            "footprint_area": 0.0025853498588682233,
+            "volume": 0.00025853498588682236,
+            "capacity": null,
+            "inner_width": null,
+            "outer_width": null,
+            "handle_length": null
+          },
+          "internal_geometry": null,
+          "components": [],
+          "object_id": "object_1",
+          "distractor_role": "incorrect_shape_incorrect_measurement",
+          "target_match": false,
+          "shape_match": false,
+          "measurement_match": false
+        },
+        {
+          "category": "circular_disk",
+          "geometry": {
+            "kind": "cylinder",
+            "radius_m": 0.023257497070011193,
+            "height_m": 0.03,
+            "axis": "Z"
+          },
+          "physical_properties_si": {
+            "length": 0.046514994140022387,
+            "width": 0.046514994140022387,
+            "height": 0.03,
+            "radius": 0.023257497070011193,
+            "diameter": 0.046514994140022387,
+            "footprint_area": 0.0016993225577959573,
+            "volume": 5.0979676733878714e-05,
+            "capacity": null,
+            "inner_width": null,
+            "outer_width": null,
+            "handle_length": null
+          },
+          "internal_geometry": null,
+          "components": [],
+          "object_id": "object_2",
+          "distractor_role": "correct_shape_incorrect_measurement",
+          "target_match": false,
+          "shape_match": true,
+          "measurement_match": false
+        }
+      ],
+      "target_index": 0,
+      "target_id": "object_0",
+      "distractor_ids": [
+        "object_1",
+        "object_2"
+      ],
+      "difficulty": {
+        "minimum_linear_gap_m": 0.01,
+        "objects": 3,
+        "appearance": "similar",
+        "relative_derived_gap": 0.2,
+        "linear_gap_scale": {
+          "radius": 0.25,
+          "diameter": 0.5,
+          "width": 0.5
+        },
+        "effective_objects": 3
+      },
+      "separation": [
+        {
+          "attribute": "diameter",
+          "minimum_si": 0.005,
+          "actual_si": 0.005373945979743222,
+          "dimension": 1
+        },
+        {
+          "attribute": "diameter",
+          "minimum_si": 0.005,
+          "actual_si": 0.005485005859977618,
+          "dimension": 1
+        }
+      ],
+      "observability_status": "unverified",
+      "observability_reason": "Requires calibrated rendered-view review; local axes and cavities may be ambiguous/occluded",
+      "manipulation_protocol": "oracle_pick_lift_hold_proxy",
+      "geometry_qualification": "analytic_and_procedural; physics validation pending",
+      "control_group_id": "efe095852d1081b3e677539b3285c55dac7b2f5fd7b072d836efef4c72d98885",
+      "constraint_necessity": {
+        "diameter": true
+      },
+      "target_measurement_ranks": {
+        "diameter": 1
+      },
+      "rank_balance_status": "Requires manifest-level distribution review; feasibility can limit rank counterbalancing",
+      "instruction": "Pick the object with local diameter 52 mm. Lift and hold it; leave all other objects untouched.",
+      "fingerprint": "eb2e57771747c2e4766287af87b4aae34572937d2fb76d25ec58d12d3b36d0bc",
+      "scenario_id": "MOU_diameter_cross_shape_L3_67577_eb2e577717"
+    },
+    "objects": [
+      {
+        "category": "circular_disk",
+        "geometry": {
+          "kind": "cylinder",
+          "radius_m": 0.026000000000000002,
+          "height_m": 0.03,
+          "axis": "Z"
+        },
+        "physical_properties_si": {
+          "length": 0.052000000000000005,
+          "width": 0.052000000000000005,
+          "height": 0.03,
+          "radius": 0.026000000000000002,
+          "diameter": 0.052000000000000005,
+          "footprint_area": 0.0021237166338267006,
+          "volume": 6.371149901480101e-05,
+          "capacity": null,
+          "inner_width": null,
+          "outer_width": null,
+          "handle_length": null
+        },
+        "internal_geometry": null,
+        "components": [],
+        "object_id": "object_0",
+        "distractor_role": "correct_shape_correct_measurement",
+        "target_match": true,
+        "shape_match": true,
+        "measurement_match": true,
+        "name": "object_0",
+        "shape": "cylinder",
+        "size_m": [
+          0.052000000000000005,
+          0.052000000000000005,
+          0.03
+        ],
+        "radius_m": 0.026000000000000002,
+        "position_m": [
+          0.2400524616241455,
+          0.04350058734416962,
+          0.7649999856948853
+        ],
+        "rotation_xyzw": [
+          0.0,
+          0.0,
+          0.7071068286895752,
+          0.7071068286895752
+        ],
+        "color_rgb": [
+          0.55,
+          0.012,
+          0.004
+        ],
+        "mass_kg": 0.05,
+        "grasp_width_m": 0.052000000000000005,
+        "grasp_yaw_offset_rad": 0.0,
+        "grasp_offset_local_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "com_offset_m": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "category": "cylinder",
+        "geometry": {
+          "kind": "cylinder",
+          "radius_m": 0.028686972989871613,
+          "height_m": 0.1,
+          "axis": "Z"
+        },
+        "physical_properties_si": {
+          "length": 0.05737394597974323,
+          "width": 0.05737394597974323,
+          "height": 0.1,
+          "radius": 0.028686972989871613,
+          "diameter": 0.05737394597974323,
+          "footprint_area": 0.0025853498588682233,
+          "volume": 0.00025853498588682236,
+          "capacity": null,
+          "inner_width": null,
+          "outer_width": null,
+          "handle_length": null
+        },
+        "internal_geometry": null,
+        "components": [],
+        "object_id": "object_1",
+        "distractor_role": "incorrect_shape_incorrect_measurement",
+        "target_match": false,
+        "shape_match": false,
+        "measurement_match": false,
+        "name": "object_1",
+        "shape": "cylinder",
+        "size_m": [
+          0.05737394597974323,
+          0.05737394597974323,
+          0.1
+        ],
+        "radius_m": 0.028686972989871613,
+        "position_m": [
+          0.022394556552171707,
+          0.037408389151096344,
+          0.800000011920929
+        ],
+        "rotation_xyzw": [
+          0.0,
+          0.0,
+          0.7071068286895752,
+          0.7071068286895752
+        ],
+        "color_rgb": [
+          0.5225,
+          0.0114,
+          0.0038
+        ],
+        "mass_kg": 0.05,
+        "grasp_width_m": 0.05737394597974323,
+        "grasp_yaw_offset_rad": 0.0,
+        "grasp_offset_local_m": [
+          0.0,
+          0.0,
+          0.030000000000000002
+        ],
+        "com_offset_m": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "category": "circular_disk",
+        "geometry": {
+          "kind": "cylinder",
+          "radius_m": 0.023257497070011193,
+          "height_m": 0.03,
+          "axis": "Z"
+        },
+        "physical_properties_si": {
+          "length": 0.046514994140022387,
+          "width": 0.046514994140022387,
+          "height": 0.03,
+          "radius": 0.023257497070011193,
+          "diameter": 0.046514994140022387,
+          "footprint_area": 0.0016993225577959573,
+          "volume": 5.0979676733878714e-05,
+          "capacity": null,
+          "inner_width": null,
+          "outer_width": null,
+          "handle_length": null
+        },
+        "internal_geometry": null,
+        "components": [],
+        "object_id": "object_2",
+        "distractor_role": "correct_shape_incorrect_measurement",
+        "target_match": false,
+        "shape_match": true,
+        "measurement_match": false,
+        "name": "object_2",
+        "shape": "cylinder",
+        "size_m": [
+          0.046514994140022387,
+          0.046514994140022387,
+          0.03
+        ],
+        "radius_m": 0.023257497070011193,
+        "position_m": [
+          -0.2527245283126831,
+          0.021659614518284798,
+          0.7649999856948853
+        ],
+        "rotation_xyzw": [
+          0.0,
+          0.0,
+          0.7071068286895752,
+          0.7071068286895752
+        ],
+        "color_rgb": [
+          0.53625,
+          0.0117,
+          0.0039
+        ],
+        "mass_kg": 0.05,
+        "grasp_width_m": 0.046514994140022387,
+        "grasp_yaw_offset_rad": 0.0,
+        "grasp_offset_local_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "com_offset_m": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "randomization_samples": {
+      "camera": {},
+      "light": [],
+      "robot_reset_joint_position": [
+        0.0,
+        -0.5690000057220459,
+        0.0,
+        -2.809999942779541,
+        0.0,
+        3.0369999408721924,
+        0.7409999966621399,
+        0.03999999910593033,
+        0.03999999910593033
+      ],
+      "robot_reset_joint_velocity": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "settling_seconds": 1.0,
+    "object_initialization": "supported_pose_asleep_until_contact",
+    "peak_object_lifts_m": [
+      0.1664106845855713,
+      0.0,
+      0.0
+    ]
+  },
+  "initial_state": {
+    "hand_goal_xyzw": [
+      0.2400524616241455,
+      0.04350058734416962,
+      1.0183999856948853,
+      0.7071067235853865,
+      0.7071068387877039,
+      0.0,
+      0.0
+    ],
+    "hand_pose_xyzw": [
+      -2.0954757928848267e-08,
+      -0.01055227592587471,
+      1.2078238725662231,
+      0.6372082829475403,
+      0.6661463379859924,
+      0.2800728678703308,
+      -0.2679065465927124
+    ],
+    "joint_position": [
+      -5.3156386085363716e-14,
+      -0.5690000057220459,
+      -2.8225883883328286e-14,
+      -2.809999942779541,
+      8.541908838783675e-15,
+      3.0369999408721924,
+      0.7409999966621399,
+      0.03999999165534973,
+      0.03999999165534973
+    ],
+    "joint_velocity": [
+      -1.6482253062388708e-11,
+      -3.9376715863653766e-13,
+      -6.884829512054935e-12,
+      3.7323097357936513e-14,
+      2.776960302333653e-12,
+      1.5739116824078914e-12,
+      -1.2691222855618078e-12,
+      2.4553216348977003e-07,
+      2.4791498276499624e-07
+    ],
+    "object_aabb_max": [
+      [
+        0.26605246162414553,
+        0.06950058734416961,
+        0.7799999856948853
+      ],
+      [
+        0.05108152954204332,
+        0.06609536214096795,
+        0.850000011920929
+      ],
+      [
+        -0.22946703124267193,
+        0.04491711158829599,
+        0.7799999856948853
+      ]
+    ],
+    "object_aabb_min": [
+      [
+        0.2140524616241455,
+        0.017500587344169614,
+        0.7499999856948852
+      ],
+      [
+        -0.006292416437699906,
+        0.00872141616122473,
+        0.7500000119209289
+      ],
+      [
+        -0.2759820253826943,
+        -0.0015978825517263956,
+        0.7499999856948852
+      ]
+    ],
+    "object_pose_xyzw": [
+      [
+        0.2400524616241455,
+        0.04350058734416962,
+        0.7649999856948853,
+        0.0,
+        0.0,
+        0.7071068286895752,
+        0.7071068286895752
+      ],
+      [
+        0.022394556552171707,
+        0.037408389151096344,
+        0.800000011920929,
+        0.0,
+        0.0,
+        0.7071068286895752,
+        0.7071068286895752
+      ],
+      [
+        -0.2527245283126831,
+        0.021659614518284798,
+        0.7649999856948853,
+        0.0,
+        0.0,
+        0.7071068286895752,
+        0.7071068286895752
+      ]
+    ],
+    "object_velocity": [
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "robot_root_pose_xyzw": [
+      -6.9267116487026215e-09,
+      -0.4000000059604645,
+      0.75,
+      4.7963112592697144e-08,
+      0.0,
+      0.7071068286895752,
+      0.7071067094802856
+    ]
+  },
+  "policy_inputs": [
+    "top RGB",
+    "wrist RGB",
+    "nine current joint positions",
+    "instruction"
+  ],
+  "evaluator_only": [
+    "scene",
+    "initial_state.object_*",
+    "target_id",
+    "success thresholds"
+  ]
+}

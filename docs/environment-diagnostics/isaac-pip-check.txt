@@ -1,0 +1,9 @@
+Using Python 3.12.13 environment at: runtime/robot2/.venv-isaacsim
+Checked 295 packages in 1ms
+Found 6 incompatibilities
+The package `numba` requires `numpy>=1.22,<2.5`, but `2.5.1` is installed
+The package `isaacsim-core` requires `fsspec==2026.2.0`, but `2026.6.0` is installed
+The package `cmeel-boost` requires `numpy>=2.3,<2.4 ; python_full_version >= '3.11'`, but `2.5.1` is installed
+The package `isaacsim-kernel` requires `numpy==2.3.1`, but `2.5.1` is installed
+The package `isaacsim-kernel` requires `urllib3==2.7.0`, but `2.8.0` is installed
+The package `isaacsim-robot` requires `onnxruntime-gpu==1.26.0`, but it's not installed

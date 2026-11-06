@@ -1,0 +1,5 @@
+Using Python 3.12.3 environment at: runtime/robot3/Geometric-Action-Model/.venv
+Checked 153 packages in 1ms
+Found 2 incompatibilities
+The package `datasets` requires `pyarrow>=21.0.0`, but `20.0.0` is installed
+The package `robosuite` requires `opencv-python`, but it's not installed

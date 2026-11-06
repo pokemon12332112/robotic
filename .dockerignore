@@ -1,0 +1,6 @@
+runtime
+artifacts
+wheelhouse
+.git
+.env
+**/__pycache__

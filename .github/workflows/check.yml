@@ -1,0 +1,13 @@
+name: Portable launcher checks
+on: [push, pull_request]
+jobs:
+  checks:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Launcher, transfer and dataset provenance tests (no weights or GPU)
+        run: python3 -m unittest discover -s tests -v
+      - name: Shell and Compose syntax
+        run: |
+          bash -n bench docker/run.sh
+          docker compose config --quiet

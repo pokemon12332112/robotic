@@ -1,0 +1,12 @@
+[
+  {
+    "repo": "haofuly/spatial-forcing-7b-finetuned-libero-spatial",
+    "revision": "58718e3948c78ae14a10514e162be775dee1bb6f",
+    "local_dir": "Spatial-Forcing/openvla-SF/ckpts/spatial-forcing-7b-finetuned-libero-spatial"
+  },
+  {
+    "repo": "facebook/VGGT-1B",
+    "revision": "860abec7937da0a4c03c41d3c269c366e82abdf9",
+    "local_dir": "Spatial-Forcing/openvla-SF/ckpts/vggt"
+  }
+]

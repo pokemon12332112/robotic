@@ -1,0 +1,104 @@
+{
+  "source_episode": "episode_0003",
+  "source_split": "train",
+  "revision": "e3dbcd59b906768df0a2e7baa8b3124c6b0aaec1",
+  "image_size": [
+    256,
+    256
+  ],
+  "intrinsics": {
+    "top": [
+      [
+        309.0193176269531,
+        0.0,
+        128.0
+      ],
+      [
+        0.0,
+        309.0193176269531,
+        128.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "wrist": [
+      [
+        166.81285095214844,
+        0.0,
+        128.0
+      ],
+      [
+        0.0,
+        166.81285095214844,
+        128.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ]
+  },
+  "rig_settings": {
+    "CAMERAS": {
+      "top": {
+        "position": [
+          0.0,
+          0.65,
+          1.85
+        ],
+        "target": [
+          0.0,
+          0.12,
+          0.78
+        ]
+      },
+      "left": {
+        "position": [
+          -0.8,
+          0.1,
+          1.4
+        ],
+        "target": [
+          -0.08,
+          0.1,
+          0.78
+        ]
+      },
+      "right": {
+        "position": [
+          0.8,
+          0.1,
+          1.4
+        ],
+        "target": [
+          0.08,
+          0.1,
+          0.78
+        ]
+      },
+      "wrist": {
+        "body": "panda_hand",
+        "offset_position": [
+          0.05,
+          0.0,
+          0.0
+        ],
+        "offset_rotation_xyzw": [
+          0.0,
+          0.0,
+          0.7071067812,
+          0.7071067812
+        ]
+      }
+    },
+    "IMAGE_WIDTH": 256,
+    "IMAGE_HEIGHT": 256,
+    "CAMERA_FOCAL_LENGTH": 25.2949225998,
+    "CAMERA_HORIZONTAL_APERTURE": 20.955,
+    "WRIST_CAMERA_FOCAL_LENGTH": 13.6545438439
+  }
+}

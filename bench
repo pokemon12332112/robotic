@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+set -euo pipefail
+kit_root="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+exec python3 "${kit_root}/scripts/bench.py" "$@"

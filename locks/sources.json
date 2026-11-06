@@ -1,0 +1,75 @@
+{
+  "pi05": {
+    "path": "robot3/openpi",
+    "url": "https://github.com/Physical-Intelligence/openpi.git",
+    "commit": "215abfb217dbac7d5f1273282331b9b1866c0479",
+    "submodules": "d1dc83afd89ded4379851257fe5d85632d31d5ec third_party/aloha (d1dc83a)\n f78abd68ee283de9f9be3c8f7e2a9ad60246e95c third_party/libero (f78abd6)",
+    "patch": "patches/pi05.patch",
+    "initialize_submodules": true
+  },
+  "gam": {
+    "path": "robot3/Geometric-Action-Model",
+    "url": "https://github.com/cvlab-kaist/Geometric-Action-Model.git",
+    "commit": "58bb91e33b0b575a84c60f7b432902c609726da1",
+    "submodules": "",
+    "initialize_submodules": false
+  },
+  "spatialvla": {
+    "path": "robot3/SpatialVLA",
+    "url": "https://github.com/SpatialVLA/SpatialVLA.git",
+    "commit": "18fd74b2a633ec8d9ec7aadcd803969555cc9fbd",
+    "submodules": "",
+    "initialize_submodules": false
+  },
+  "oft": {
+    "path": "robot3/openvla-oft",
+    "url": "https://github.com/moojink/openvla-oft.git",
+    "commit": "e4287e94541f459edc4feabc4e181f537cd569a8",
+    "submodules": "",
+    "patch": "patches/oft.patch",
+    "initialize_submodules": false
+  },
+  "sf": {
+    "path": "robot3/Spatial-Forcing",
+    "url": "https://github.com/OpenHelix-Team/Spatial-Forcing.git",
+    "commit": "4a77812e6c42c6fab807d9f45fe1da2e05f739f5",
+    "submodules": "-4976dc30028e805ff8094b55501d532c48fec182 SLA/third_party/libero_plus",
+    "patch": "patches/sf.patch",
+    "initialize_submodules": false
+  },
+  "da3": {
+    "path": "robot3/Geometric-Action-Model/Depth-Anything-3",
+    "url": "https://github.com/ByteDance-Seed/Depth-Anything-3.git",
+    "commit": "2c21ea849ceec7b469a3e62ea0c0e270afc3281a",
+    "submodules": "-6aede13a3f6c25750bf7fde10209c06cb73060bb da3_streaming/loop_utils/salad",
+    "initialize_submodules": false
+  },
+  "libero-oft": {
+    "path": "robot3/openvla-oft/LIBERO",
+    "url": "https://github.com/Lifelong-Robot-Learning/LIBERO.git",
+    "commit": "8f1084e3132a39270c3a13ebe37270a43ece2a01",
+    "submodules": "",
+    "initialize_submodules": false
+  },
+  "libero-sf": {
+    "path": "robot3/Spatial-Forcing/openvla-SF/LIBERO",
+    "url": "https://github.com/Lifelong-Robot-Learning/LIBERO.git",
+    "commit": "8f1084e3132a39270c3a13ebe37270a43ece2a01",
+    "submodules": "",
+    "initialize_submodules": false
+  },
+  "benchmark": {
+    "path": "robot2/Isaac-GR00T/external_dependencies/spatial-understanding",
+    "url": "https://github.com/phulocnguyen/spatial-understanding.git",
+    "commit": "31ffee567d014735f82741b03bebc9cf6c13778e",
+    "submodules": "",
+    "initialize_submodules": false
+  },
+  "isaaclab": {
+    "path": "robot2/Isaac-GR00T/external_dependencies/IsaacLab",
+    "url": "https://github.com/isaac-sim/IsaacLab.git",
+    "commit": "44044b0963001962abe5701133427e37b003fffe",
+    "submodules": "",
+    "initialize_submodules": false
+  }
+}

@@ -1,0 +1,17 @@
+/runtime/
+/.env
+/artifacts/
+/wheelhouse/
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+*.pt
+*.pth
+*.safetensors
+*.hdf5
+*.parquet
+*.mp4
+*.tar
+*.tar.gz
+*.tar.zst
