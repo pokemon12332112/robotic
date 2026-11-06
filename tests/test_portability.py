@@ -65,6 +65,31 @@ class PackagingTests(unittest.TestCase):
             self.assertIn(str(bench.WORKSPACE / 'openpi/packages/openpi-client/src'), env['PYTHONPATH'])
         self.assertEqual(bench.environment('gam')['HF_HUB_OFFLINE'], '1')
 
+    def test_deepspeed_build_hides_cuda_without_changing_runtime(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            with patch.object(bench, 'RUNTIME', root), \
+                 patch.object(bench, 'WORKSPACE', root / 'robot3'), \
+                 patch.dict(os.environ, CUDA_VISIBLE_DEVICES='2', DS_ACCELERATOR='cuda'), \
+                 patch.object(bench, 'run') as run, \
+                 patch.object(bench.subprocess, 'run',
+                              return_value=subprocess.CompletedProcess([], 0, '', '')):
+                executable = bench.venv('gam') / 'bin/python'
+                executable.parent.mkdir(parents=True)
+                executable.touch()
+                bench.install_env('gam')
+                builds = [c for c in run.call_args_list if 'deepspeed==0.18.8' in c.args[0]]
+                self.assertEqual(len(builds), 1)
+                build_env = builds[0].kwargs['env']
+                self.assertEqual(build_env['CUDA_VISIBLE_DEVICES'], '')
+                self.assertEqual(build_env['DS_ACCELERATOR'], 'cpu')
+                self.assertEqual(build_env['DS_BUILD_OPS'], '0')
+                for call in run.call_args_list:
+                    if call is not builds[0]:
+                        self.assertEqual(call.kwargs['env']['CUDA_VISIBLE_DEVICES'], '2')
+                        self.assertEqual(call.kwargs['env']['DS_ACCELERATOR'], 'cuda')
+                self.assertEqual(bench.environment('gam')['CUDA_VISIBLE_DEVICES'], '2')
+
     def test_scheduler_dry_run_and_duplicate_gpu_rejection(self):
         path = KIT / 'scripts/parallel_runs.py'
         report = json.loads(subprocess.check_output([sys.executable, str(path), 'train', '--dry-run'], text=True))

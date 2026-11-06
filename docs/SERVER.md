@@ -107,6 +107,19 @@ are rendered relative to that root; no workstation username is required.
 
 ## Known installation metadata conflicts
 
+If an older checkout fails while installing GAM's `deepspeed==0.18.8` with
+`MissingCUDAException: CUDA_HOME does not exist`, run `git pull --ff-only`, then
+repeat `bash docker/run.sh env all`. Existing environments and downloaded
+packages are reused; rebuilding the Docker image is unnecessary.
+
+DeepSpeed's setup probes the CUDA compiler even when `DS_BUILD_OPS=0` if it sees
+a GPU. The installer now hides CUDA and selects CPU only for that package's
+build subprocess. GAM training and checks retain normal GPU visibility.
+This benchmark adapter uses PyTorch directly, not DeepSpeed. Optional upstream
+DeepSpeed GPU/distributed workflows (including a standalone GPU-side DeepSpeed
+import) can still require a matching CUDA compiler; they are outside this kit's
+supported single-GPU training path.
+
 Locks reproduce the installed working environments, including upstream metadata
 conflicts. Installations use explicit complete package lists with `--no-deps`;
 they do not ask pip to resolve a different environment. GAM's Robosuite declares

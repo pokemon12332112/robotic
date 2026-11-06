@@ -3,7 +3,8 @@
 Validated on 2026-11-06 on the existing Linux x86_64 / RTX 4090 workstation.
 The clean source tree was reconstructed at a different path, and environments
 were **installed anew inside Docker** rather than copying the original virtualenvs.
-Existing package downloads were reused through uv's verified package cache.
+Existing package downloads and built wheels were reused through uv's verified
+package cache. This initial validation did not exercise every build from source.
 
 | Check | Result |
 | --- | --- |
@@ -13,7 +14,8 @@ Existing package downloads were reused through uv's verified package cache.
 | Re-running source setup without overwriting changes | Passed |
 | Fresh π0.5, GAM, SpatialVLA, OFT, SF, Isaac environments | All six installed; imports passed |
 | GPU arithmetic in all six environments, including JAX | Passed; no model weights loaded |
-| Portable launcher/transfer/provenance tests | 12 passed |
+| Portable launcher/transfer/provenance tests | 13 passed, including DeepSpeed build environment isolation |
+| Uncached DeepSpeed 0.18.8 build without a CUDA toolkit | Passed after installer fix; GAM imports and GPU arithmetic passed with the new package |
 | π0.5 conversion/action tests in Docker | 3 passed |
 | GAM adapter tests in Docker | 5 passed |
 | SpatialVLA adapter tests in Docker | 7 passed |

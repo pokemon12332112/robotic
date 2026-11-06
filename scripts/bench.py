@@ -157,7 +157,12 @@ def install_env(model):
     run([*command, '-r', resolved], env=env)
     for requirement in ordinary:
         if requirement.startswith('deepspeed=='):
-            run([*command, '--no-build-isolation', requirement], env=env)
+            # DeepSpeed 0.18.8 probes nvcc during setup when a GPU is visible,
+            # even with DS_BUILD_OPS=0. Build its Python-only wheel on CPU;
+            # the benchmark adapter uses PyTorch and needs no DeepSpeed ops.
+            # Scope these overrides to this subprocess so training keeps CUDA.
+            build_env = dict(env, CUDA_VISIBLE_DEVICES='', DS_ACCELERATOR='cpu')
+            run([*command, '--no-build-isolation', requirement], env=build_env)
     for path in editable:
         run([*command, '-e', path], env=env)
     if model == 'pi05':

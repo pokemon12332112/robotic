@@ -34,7 +34,7 @@
       "gpu_arithmetic": "passed"
     }
   },
-  "packaging_tests_passed": 12,
+  "packaging_tests_passed": 13,
   "adapter_tests_passed": {
     "pi05": 3,
     "gam": 5,
@@ -79,5 +79,18 @@
     "weights.json": "fec1bea3489f83a3b760fce3a0c02bbc47db539e5369235a066812f0aa4593c1"
   },
   "github_payload_mib": 4.15,
-  "large_artifacts_excluded": true
+  "large_artifacts_excluded": true,
+  "deepspeed_build_fix": {
+    "validated_on": "2026-11-06",
+    "version": "0.18.8",
+    "uncached_build_without_cuda_toolkit": "passed",
+    "build_environment": {
+      "DS_BUILD_OPS": "0",
+      "CUDA_VISIBLE_DEVICES": "",
+      "DS_ACCELERATOR": "cpu"
+    },
+    "gam_adapter_imports_and_gpu_arithmetic": "passed, RTX 4090",
+    "existing_environment_mounted_read_only": true,
+    "scope": "GPU-side standalone DeepSpeed import still requires a CUDA toolkit; benchmark adapter uses PyTorch directly."
+  }
 }
